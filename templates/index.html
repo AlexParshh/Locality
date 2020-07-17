@@ -133,7 +133,7 @@
         <div v-for="biz in filteredBiz" class="qoo__services__item">
           <div class="qoo__services__item__inner uk-background-secondary">
             <i class="fas" :class="getIcon(biz.industry.toLowerCase())"></i>
-            <span class="business_type">PLACEHOLDER</span>
+            <span class="business_type">{{business.categories[0]['title']}}</span>
             <h4 class="uk-margin-small-top uk-margin-auto-bottom">
               {{business.name}}
             </h4>
