@@ -84,12 +84,37 @@ def news():
 
 @app.route('/business/<id>')
 def business(id):
+    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
+    lat = str(locationJSON['lat'])
+    lng = str(locationJSON['lon'])
     headers = {
         "Authorization": "Bearer " + config.YELP_KEY
       }
 
     businessJSON = requests.get("https://api.yelp.com/v3/businesses/" + id, headers=headers).json()
 
-    return render_template('business.html', business=businessJSON)
+    individualMarkers = [{
+            "icon": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            "lat":businessJSON['coordinates']['latitude'],
+            "lng":businessJSON['coordinates']['longitude'], 
+            'infobox': businessJSON['name']
+        },
+        {
+            "icon": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            "lat":lat,
+            "lng":businessJSON['coordinates']['longitude'], 
+            'infobox': "Your Current Location"
+        }]
+
+    soloMap = Map(
+        identifier="sndmap",
+        lat=lat,
+        lng=lng,
+        style= "height:45vh;width:70vw;margin-bottom:7vh;color:black;",
+        markers=individualMarkers
+    )
+    
+
+    return render_template('business.html', business=businessJSON, soloMap = soloMap)
 if(__name__ == "__main__"):
     app.run(debug=True)

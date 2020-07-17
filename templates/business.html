@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style/owl.carousel.min.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css')}}">
+
+  {{soloMap.js}}
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -42,7 +44,7 @@
         <ul class="uk-navbar-nav uk-visible@m">
           <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
-          <li><a href="#community" data-uk-scroll="offset: 50">GoFundMe</a></li>
+          <li><a href="#community" data-uk-scroll="offset: 50">News</a></li>
           <li><a href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
         </ul>
         <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
@@ -70,15 +72,17 @@
 <section class="qoo__dark qoo__hero" data-uk-parallax="bgy: -100">
   <div class="qoo__hero__content uk-container" data-uk-parallax="y: 100,0">
     <div class="qoo__hero__content__inner uk-margin-auto">
-      <img style="background-color: black;" src="{{ business.photos[0] }}" alt="Main Image" width="500" height="600">
+      <img style="background-color: black;display:block;margin-left:auto;margin-right:auto;width: 50%;" src="{{ business.photos[0] }}" alt="Main Image" width="500" height="600">
       <h5 class="uk-margin-small-top animation">{{business.categories[0]['title']}}</h1>
       <h1 class="uk-margin-small-top animation">{{ business.name }}</h1>
       <h2 class="uk-margin-small-top animation">{{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  </h2>
       <a href="#support" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> Let's Support Them</a>
       <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
+      {{soloMap.html}}
     </div>
   </div>
 </section>
+
 
   <!-- FAQ -->
   <section id="faq" class="qoo__dark qoo__faq">
