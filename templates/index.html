@@ -107,7 +107,10 @@
               {{business.name}}
             </h4>
             <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
-              Rating: {{business.rating}}.
+              {{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  
+            </p>
+            <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
+              Rating: {{business.rating}}
             </p>
             <a
               :href="{{business.url}}"
