@@ -14,8 +14,8 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route("/", methods = ["get"])
 def index():
     locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
-    lat = locationJSON['lat']
-    lng = locationJSON['lon']
+    lat = str(locationJSON['lat'])
+    lng = str(locationJSON['lon'])
 
     yelp = "https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=localservices,All&limit=50"
 
