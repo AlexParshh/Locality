@@ -16,7 +16,7 @@ GoogleMaps(app)
 
 @app.route("/", methods = ["get"])
 def index():
-    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
+    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
@@ -38,7 +38,7 @@ def index():
         payload = {
             "icon": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
             "lat":i["coordinates"]["latitude"],
-            "lng":i["coordinates"]["longitude"], 
+            "lng":i["coordinates"]["longitude"],
             'infobox': "<img style='width:150px;height:150px' src=" + i["image_url"]+" />"+"\n"+i['name'],
         }
 
@@ -61,14 +61,14 @@ def test():
 
 @app.route("/news")
 def news():
-    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
+    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
     headerz = {
         "Authorization": config.RADAR_IO_KEY
       }
-    
+
     geolink = "https://api.radar.io/v1/geocode/reverse?coordinates="+lat+","+lng
     reverseGeo = requests.get(geolink, headers=headerz)
 
