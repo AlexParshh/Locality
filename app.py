@@ -16,12 +16,12 @@ GoogleMaps(app)
 
 @app.route("/", methods = ["get"])
 def index():
-    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
+    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
     headers = {
-        "Authorization": config.YELP_KEY
+        "Authorization": "Bearer " + config.YELP_KEY
       }
 
     firstJSON = requests.get("https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=localservices&limit=25", headers=headers).json()
@@ -61,7 +61,7 @@ def test():
 
 @app.route("/news")
 def news():
-    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
+    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
@@ -84,7 +84,12 @@ def news():
 
 @app.route('/business/<id>')
 def business(id):
-    return render_template('business.html')
+    headers = {
+        "Authorization": "Bearer " + config.YELP_KEY
+      }
 
+    businessJSON = requests.get("https://api.yelp.com/v3/businesses/" + id, headers=headers).json()
+
+    return render_template('business.html', business=businessJSON)
 if(__name__ == "__main__"):
     app.run(debug=True)
