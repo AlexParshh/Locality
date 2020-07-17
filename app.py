@@ -26,8 +26,8 @@ def index():
     secondJSON = requests.get("https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=all&limit=25", headers=headers).json()
 
     businessJSON = []
-    businessJSON.append(firstJSON['businesses'])
-    businessJSON.append(secondJSON['businesses'])
+    businessJSON.extend(firstJSON['businesses'])
+    businessJSON.extend(secondJSON['businesses'])
     print(businessJSON)
     return render_template('index.html', businesses=businessJSON)
 
