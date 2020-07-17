@@ -21,7 +21,7 @@ def index():
 
 @app.route("/test")
 def test():
-    return jsonify({'ip': request.remote_addr}), 200
+    return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
 
 @app.route('/gofundme')
 def gofundme():
