@@ -28,7 +28,7 @@ def index():
     businessJSON = []
     businessJSON.append(firstJSON['businesses'])
     businessJSON.append(secondJSON['businesses'])
-
+    print(businessJSON)
     return render_template('index.html', businesses=businessJSON)
 
 @app.route("/test")
