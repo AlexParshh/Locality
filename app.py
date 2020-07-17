@@ -21,7 +21,7 @@ def index():
     lng = str(locationJSON['lon'])
 
     headers = {
-        "Authorization": "Bearer OuzpIYU03EajimgwSE7bOGjgdqRsjyI8zGunpx6DR1d-LgNjk8K-ioSLjf2_g57n5xcMD4meWXFsUf5rGJo63q5yqFUMWxIYoVwRJTDFxRGQNhd3zjWI72Sh0xsRX3Yx"
+        "Authorization": config.YELP_KEY
       }
 
     firstJSON = requests.get("https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=localservices&limit=25", headers=headers).json()
