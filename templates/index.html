@@ -71,8 +71,8 @@
     <div class="qoo__hero__content__inner uk-margin-auto">
       <h1 class="uk-margin-small-top animation">Locality</h1>
       <h2 class="uk-margin-small-top animation">COVID-19 is hurting our community, especially for small businesses.</h2>
-      <p class="uk-margin-medium-top animation">"Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors." </p>
-      <p class="uk-margin-medium-top animation">These businesses need our help. Want to show your support? Use Locality to grab a gift card, donate and raise awareness about these businesses. Check out some of our quick action buttons.</p>
+      <p class="uk-margin-medium-top animation">Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors.</p>
+      <p class="uk-margin-medium-top animation"><strong><u>These businesses need our help.</strong></u> Want to show your support? Use Locality to grab a gift card, donate and raise awareness about these businesses. Check out some of our quick action buttons.</p>
       <a href="#support" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> Let's Support Them</a>
       <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
       <a href="#community" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> GoFundMe</a>
@@ -96,13 +96,12 @@
       <div
         class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s"
         data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .qoo__services__item; delay: 100;"
-        data-uk-grid
-      >
+        data-uk-grid>
 
         {% for business in businesses %}
         <div v-for="biz in filteredBiz" class="qoo__services__item">
           <div class="qoo__services__item__inner uk-background-secondary">
-            <i class="fas" :class="getIcon(biz.industry.toLowerCase())"></i>
+            <i class="fas" :class="{{business.image_url}}"></i>
             <span class="business_type">{{business.categories[0]['title']}}</span>
             <h4 class="uk-margin-small-top uk-margin-auto-bottom">
               {{business.name}}
