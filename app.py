@@ -9,9 +9,7 @@ from flask_simple_geoip import SimpleGeoIP
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "thisisasecret"
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.config["GEOIPIFY_API_KEY"] = "at_JUgVIVTvno9qku9q1jRTPZFDTzfWA"
 
-simple_geoip = SimpleGeoIP(app)
 
 @app.route("/", methods = ["get"])
 def index():
@@ -23,9 +21,7 @@ def index():
 
 @app.route("/test")
 def test():
-    geoip_data = simple_geoip.get_geoip_data()
-    print(geoip_data)
-    return jsonify(data=geoip_data)
+    return jsonify({'ip': request.remote_addr}), 200
 
 @app.route('/gofundme')
 def gofundme():
