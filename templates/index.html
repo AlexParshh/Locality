@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Locality</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="title" content="Save The Community From COVID-19">
+  <meta name="description" content="Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="index.html">
+  <meta property="og:title" content="Support The Community">
+  <meta property="og:description" content="Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors.">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="index.html">
+  <meta property="twitter:title" content="Support The Comuunity During COVID-19">
+  <meta property="twitter:description" content="Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors.">
+
+  <link rel="icon" href="img/favicon.ico.html" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/uikit.min.css')}}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/owl.theme.default.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css')}}">
+
+  {{sndmap.js}}
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-48973043-15');
+  </script>
+</head>
+
+<body>
+<header>
+  <nav class="qoo__dark qoo__navbar uk-navbar-container" data-uk-sticky="top: 600; animation: uk-animation-slide-top;">
+    <div class="uk-container" data-uk-navbar>
+      <div class="uk-navbar-left">
+      </div>
+      <div id="navbar-scrollspy" class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-visible@m">
+          <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
+          <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
+          <li><a href="#community" data-uk-scroll="offset: 50">GoFundMe</a></li>
+          <li><a href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
+        </ul>
+        <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
+          <a href="#" data-uk-toggle="target: #mobile_navbar_modal"><i class="icon" data-feather="menu"></i></a>
+          <div id="mobile_navbar_modal" class="contact-modal uk-modal-full" data-uk-modal>
+            <div class="qoo__dark uk-modal-dialog">
+              <div class="uk-container-xsmall uk-margin-auto uk-padding-large">
+                <button class="qoo__dark uk-modal-close-full uk-close-large" type="button" data-uk-close></button>
+                <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
+                  <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
+                  <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
+                  <li><a class="uk-modal-close" href="#community" data-uk-toggle="target: #contact_modal">GoFundMe</a></li>
+                  <li><a class="uk-modal-close" href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- End Header -->
+
+<section class="qoo__dark qoo__hero" data-uk-parallax="bgy: -100">
+  <div class="qoo__hero__content uk-container" data-uk-parallax="y: 100,0">
+    <div class="qoo__hero__content__inner uk-margin-auto">
+      <h1 class="uk-margin-small-top animation">Locality</h1>
+      <h2 class="uk-margin-small-top animation">COVID-19 is hurting our community, especially for small businesses.</h2>
+      <p class="uk-margin-medium-top animation">Without the help from our community, coffee shops ☕, bars & restaurants 🍻, computer repair shops 💻 and many others may not reopen their doors.</p>
+      <p class="uk-margin-medium-top animation"><strong><u>These businesses need our help.</strong></u> Want to show your support? Use Locality to grab a gift card, donate and raise awareness about these businesses. Check out some of our quick action buttons.</p>
+      <a href="#support" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> Let's Support Them</a>
+      <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
+      <a href="#community" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> GoFundMe</a>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="qoo__dark qoo__services">
+    <div id="app" class="uk-container">
+      <div class="qoo__section__header uk-text-center">
+        <span class="qoo__section__title__small">PLEASE SUPPORT</span>
+        <h2 class="qoo__section__title">Our Community</h2>
+        <p>
+          These businesses are grabbed by your location and are likely highly impacted by COVID-19 and need your help. We believe truly that these businesses would love a stepping stone during these rough times.
+        </p>
+      </div>
+      <div style="width: 330px; margin: 0 auto 0px auto;">
+        <a style="width: 330px; margin: 0 auto 65px auto;" class="uk-button uk-button-md uk-button-primary animation" data-uk-toggle="target: #contact_modal">Add Business</a>
+      </div>
+
+      {{sndmap.html}}
+    
+      <div
+        class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s"
+        data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .qoo__services__item; delay: 100;"
+        data-uk-grid>
+
+        {% for business in businesses %}
+        <div v-for="biz in filteredBiz" class="qoo__services__item">
+          <div class="qoo__services__item__inner uk-background-secondary">
+            <i class="fas" :class="{{business.image_url}}"></i>
+            <span class="business_type">{{business.categories[0]['title']}}</span>
+            <h4 class="uk-margin-small-top uk-margin-auto-bottom" onclick="location.href='{{ url_for('business', id=business.id) }}';">
+              {{business.name}}
+            </h4>
+            <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
+              {{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}
+            </p>
+            <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
+              Rating: {{business.rating}}
+            </p>
+            <a
+              :href="{{business.url}}"
+              target="_blank"
+              class="uk-button uk-button-medium uk-button-primary uk-margin-top animation"
+            >
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- New Business -->
+  <section id="business" class="qoo__dark qoo__contact__2 uk-padding uk-padding-remove-horizontal">
+    <div class="uk-container">
+      <div class="uk-grid uk-child-width-expand@m" data-uk-grid>
+        <div>
+          <h2>Not seeing a business that you know could use support? Please submit them!</h2>
+        </div>
+        <div class="uk-text-right uk-position-relative">
+          <div class="uk-position-relative">
+            <button class="uk-button uk-button-large uk-button-primary" data-uk-toggle="target: #contact_modal">Add Business</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact_modal" class="contact-modal uk-modal-full" data-uk-modal>
+      <div class="qoo__dark uk-modal-dialog">
+        <center>
+          <a href="/" class="uk-button uk-button-large uk-button-primary">Go Back</a>
+          <iframe src="https://jsonplaceholder.typicode.com/posts" width="326" height="1340" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </center>
+      </div>
+    </div>
+  </section>
+  <!-- End -->
+  <!-- GoFundMe -->
+  <section id="community" class="qoo__dark qoo__contact__2 qoo__dark qoo__testimonials uk-padding-remove-bottom">
+    <div class="uk-container">
+      <div class="qoo__section__header uk-text-center">
+        <span class="qoo__section__title__small">DIRE NEED</span>
+        <h2 class="qoo__section__title">GoFundMe</h2>
+        <p>
+        Support the many businesses who are at the brisk of closing and are in a dire need of funding.
+        </p>
+      </div>
+      <div style="width: 330px; margin: 0 auto 0px auto;">
+        <a style="width: 330px; margin: 0 auto 65px auto;" class="uk-button uk-button-md uk-button-primary animation" data-uk-toggle="target: #contact_modal">Visit GoFundMe</a>
+      </div>
+      <div class="uk-grid uk-child-width-expand@m" data-uk-grid>
+        <div class="owl-carousel owl-theme uk-margin-large-top">
+          <div class="gfm-embed" data-url="https://www.gofundme.com/f/nishdish-contingency/widget/large"></div>
+          <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+          <div class="gfm-embed" data-url="https://www.gofundme.com/f/banu-relief-fund/widget/large"></div>
+        </div>
+      </div>
+  </section>
+  <!-- End GoFundMe -->
+
+  <!-- FAQ -->
+  <section id="faq" class="qoo__dark qoo__faq">
+  <div class="uk-container">
+    <div class="qoo__section__header uk-margin-medium-top uk-text-center">
+      <span class="qoo__section__title__small">FAQ</span>
+      <h2 class="qoo__section__title">Most Asked Questions</h2>
+    </div>
+    <ul class="uk-text-left uk-margin-large-top uk-width-xxlarge uk-align-center" data-uk-accordion>
+      <li class="uk-open">
+        <a class="uk-accordion-title" href="#">Does this site make money?</a>
+        <div class="uk-accordion-content">
+          <p>Nope. This is simply an inititative to promote local businesses in the area.</p>
+        </div>
+      </li>
+      <li>
+        <a class="uk-accordion-title" href="#">How do I add my business?</a>
+        <div class="uk-accordion-content">
+          <p>As long as your business is registered, our service has the capability to feature you depending on your location to a user. If your establishment is close by to a user, your business will be featured as a card on Locality.</p>
+        </div>
+      </li>
+      <li>
+        <a class="uk-accordion-title" href="#">There is incorrect information?</a>
+        <div class="uk-accordion-content">
+          <p>We use popular API's and cross check your details. Please report your business to locality@gmail.com and one of our team members will forward it to the services whom provide this data to Locality.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- End FAQ -->
+
+  <!-- Footer -->
+  <footer class="qoo__dark uk-padding uk-padding-remove-horizontal">
+    <div class="uk-container">
+      <div class="uk-grid uk-child-width-expand@s uk-text-center" data-uk-grid>
+        <div>
+          <p>Created by Shubham Shah, Alex Parsh and the team. 👋</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/uikit.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/uikit-icons.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/feather.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/vosteria.js')}}"></script>
+
+</body>
+</html>
+
+<style>a.business-link{
+    color: inherit;
+  }
+</style>

@@ -1,0 +1,6 @@
+requests==2.22.0
+dropbox
+flask
+gunicorn
+flask_simple_geoip
+flask-googlemaps
