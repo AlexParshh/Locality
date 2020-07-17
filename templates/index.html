@@ -135,15 +135,15 @@
         <div v-for="biz in filteredBiz" class="qoo__services__item">
           <div class="qoo__services__item__inner uk-background-secondary">
             <i class="fas" :class="getIcon(biz.industry.toLowerCase())"></i>
-            <span class="business_type">{{business.type}}</span>
+            <span class="business_type">PLACEHOLDER</span>
             <h4 class="uk-margin-small-top uk-margin-auto-bottom">
               {{business.name}}
             </h4>
             <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
-              The best way to support them is by {{business.supportType}}.
+              Rating: {{business.ratingg}}.
             </p>
             <a
-              :href="{{business.website}}"
+              :href="{{business.url}}"
               target="_blank"
               class="uk-button uk-button-medium uk-button-primary uk-margin-top animation"
             >

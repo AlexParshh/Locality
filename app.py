@@ -13,11 +13,19 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route("/", methods = ["get"])
 def index():
-    businessJSON = requests.get("https://www.dl.dropboxusercontent.com/s/uq8udyddz9iq8cc/businesses.json?dl=0").json()
-    business = []
-    for each in businessJSON['businesses']:
-        business.append(each)
-    return render_template('index.html', businesses=business)
+    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
+    lat = locationJSON['lat']
+    lng = locationJSON['lon']
+
+    yelp = "https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=localservices,All&limit=50"
+
+    headers = {
+        "Authorization": "Bearer OuzpIYU03EajimgwSE7bOGjgdqRsjyI8zGunpx6DR1d-LgNjk8K-ioSLjf2_g57n5xcMD4meWXFsUf5rGJo63q5yqFUMWxIYoVwRJTDFxRGQNhd3zjWI72Sh0xsRX3Yx"
+      }
+
+    businessJSON = requests.get(yelp, headers=headers).json()
+
+    return render_template('index.html', businesses=businessJSON['businesses'])
 
 @app.route("/test")
 def test():
