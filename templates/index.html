@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css')}}">
 
+  {{sndmap.js}}
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -43,6 +45,7 @@
         <ul class="uk-navbar-nav uk-visible@m">
           <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
+          <li><a href="#community" data-uk-scroll="offset: 50">GoFundMe</a></li>
           <li><a href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
         </ul>
         <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
@@ -54,6 +57,7 @@
                 <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
                   <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
                   <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
+                  <li><a class="uk-modal-close" href="#community" data-uk-toggle="target: #contact_modal">GoFundMe</a></li>
                   <li><a class="uk-modal-close" href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
                 </ul>
               </div>
@@ -93,6 +97,8 @@
         <a style="width: 330px; margin: 0 auto 65px auto;" class="uk-button uk-button-md uk-button-primary animation" data-uk-toggle="target: #contact_modal">Add Business</a>
       </div>
 
+      {{sndmap.html}}
+    
       <div
         class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s"
         data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .qoo__services__item; delay: 100;"
@@ -103,11 +109,11 @@
           <div class="qoo__services__item__inner uk-background-secondary">
             <i class="fas" :class="{{business.image_url}}"></i>
             <span class="business_type">{{business.categories[0]['title']}}</span>
-            <h4 class="uk-margin-small-top uk-margin-auto-bottom">
+            <h4 class="uk-margin-small-top uk-margin-auto-bottom" onclick="location.href='{{ url_for('business', id=business.id) }}';">
               {{business.name}}
             </h4>
             <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
-              {{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  
+              {{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}
             </p>
             <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
               Rating: {{business.rating}}

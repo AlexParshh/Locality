@@ -3,3 +3,4 @@ dropbox
 flask
 gunicorn
 flask_simple_geoip
+flask-googlemaps
