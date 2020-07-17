@@ -16,7 +16,7 @@ GoogleMaps(app)
 
 @app.route("/", methods = ["get"])
 def index():
-    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
+    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
@@ -61,7 +61,7 @@ def test():
 
 @app.route("/news")
 def news():
-    locationJSON = requests.get("http://ip-api.com/json/" + "99.228.3.238").json()
+    locationJSON = requests.get("http://ip-api.com/json/" + request.headers['X-Forwarded-For']).json()
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
