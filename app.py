@@ -17,15 +17,19 @@ def index():
     lat = str(locationJSON['lat'])
     lng = str(locationJSON['lon'])
 
-    yelp = "https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=All&limit=50"
-
     headers = {
         "Authorization": "Bearer OuzpIYU03EajimgwSE7bOGjgdqRsjyI8zGunpx6DR1d-LgNjk8K-ioSLjf2_g57n5xcMD4meWXFsUf5rGJo63q5yqFUMWxIYoVwRJTDFxRGQNhd3zjWI72Sh0xsRX3Yx"
       }
 
-    businessJSON = requests.get(yelp, headers=headers).json()
+    firstJSON = requests.get("https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=localservices&limit=25", headers=headers).json()
 
-    return render_template('index.html', businesses=businessJSON['businesses'])
+    secondJSON = requests.get("https://api.yelp.com/v3/businesses/search?latitude=" + lat + "&longitude=" + lng + "&categories=all&limit=25", headers=headers).json()
+
+    businessJSON = []
+    businessJSON.append(firstJSON['businesses'])
+    businessJSON.append(secondJSON['businesses'])
+
+    return render_template('index.html', businesses=businessJSON)
 
 @app.route("/test")
 def test():
