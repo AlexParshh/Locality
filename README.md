@@ -8,33 +8,36 @@
 
 ## How to View Locality 
 
-To view Locality in your browser, view: [Locality](locality.space)
+To view Locality in your browser, view: [Locality](http://locality.space/)
 
 ## Built With
 
-Locality was built with Python, HTML, CSS, and JavaScript. The APIs we used include, [Radar.io](https://radar.io/product/api), [Google Geolocation](https://developers.google.com/maps/documentation/javascript/geolocation), [Yelp](https://www.yelp.com/developers), and [Privacy.com](https://developer.privacy.com/docs). 
+Locality was built with Python, HTML, CSS, and JavaScript. The APIs we used include, [Radar.io](https://radar.io/product/api), [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview), [Yelp](https://www.yelp.com/developers), and [Privacy.com](https://developer.privacy.com/docs). 
 
 
 Heroku makes use of the user's IP address, and via geolocation, returns the user's latitude and longitude. Then, these coordinates go through the Yelp Deep Search API and our custom filters to find relevant local businneses in the nearby area. The locations are sorted by their distance from the user automatically. 
+
+The Google Maps API was used to add styled markers to businesses near the user's location. 
 
 
 ## Modules 
 
 The modules used: 
 
-**Dropbox** 
-**Flask**
-**Gunicorn**
-**flask_simple_geoip**
-**flask-googlemaps**
+Dropbox
+
+- Flask
+- Gunicorn
+- flask_simple_geoip
+- flask-googlemaps
 
 
 ## Authors 
 
-This web app was built by **Shubham Shah**, **Alex Parshh**, and **Aditi Parekh**
+This web app was built by **Shubham Shah**, **Alex Parsh**, and **Aditi Parekh**
 
 ### View the Contributer's Profiles here: 
 
-    [Shubham Shah](https://github.com/SpikePlayz)
-    [Alex Parsh](https://github.com/AlexParshh)
-    [Aditi Parekh](https://github.com/aditip897)
+   - [Shubham Shah](https://github.com/SpikePlayz)
+   - [Alex Parsh](https://github.com/AlexParshh)
+   - [Aditi Parekh](https://github.com/aditip897)
