@@ -48,7 +48,7 @@ def index():
         identifier="sndmap",
         lat=lat,
         lng=lng,
-        style= "height:45vh;width:70vw;margin-bottom:7vh;color:black;",
+        style= "height:45vh;margin-bottom:7vh;color:black;",
         markers=markerList
     )
 
@@ -110,7 +110,7 @@ def business(id):
         identifier="sndmap",
         lat=lat,
         lng=lng,
-        style= "height:45vh;width:70vw;margin-top:7vh;margin-bottom:7vh;color:black;",
+        style= "height:45vh;margin-top:7vh;margin-bottom:7vh;color:black;",
         markers=individualMarkers
     )
 
