@@ -24,8 +24,6 @@ The Google Maps API was used to add styled markers to businesses near the user's
 
 The modules used: 
 
-Dropbox
-
 - Flask
 - Gunicorn
 - flask_simple_geoip
@@ -34,7 +32,7 @@ Dropbox
 
 ## Authors 
 
-This web app was built by **Shubham Shah**, **Alex Parsh**, and **Aditi Parekh**
+This web app was built by **Shubham Shah**, **Alex Parsh**, and **Aditi Parekh**.
 
 ### View the Contributer's Profiles here: 
 
