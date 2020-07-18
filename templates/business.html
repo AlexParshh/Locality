@@ -42,6 +42,7 @@
       </div>
       <div id="navbar-scrollspy" class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@m">
+          <li><a href="/">Home</a></li>
           <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
           <li><a href="/news">News</a></li>
@@ -54,6 +55,7 @@
               <div class="uk-container-xsmall uk-margin-auto uk-padding-large">
                 <button class="qoo__dark uk-modal-close-full uk-close-large" type="button" data-uk-close></button>
                 <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
+                  <li><a href="/">Home</a></li>
                   <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
                   <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
                   <li><a href="/news">News</a></li>
@@ -77,11 +79,13 @@
       <h1 class="uk-margin-small-top animation">{{ business.name }}</h1>
       <h2 class="uk-margin-small-top animation">{{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  </h2>
       <h3 style="color:white" class="uk-margin-small-top animation">{{phone}}</h3>
-      <a href="#support" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> Let's Support Them</a>
-      <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
       <a href={{maplink}} class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> Get Personalized Directions</a>
-
-      <table style="width:70vw;margin-top:7vw;" class="table table-dark">
+      
+      <div style="margin-top:5px">
+        <script type="text/javascript" defer src="https://donorbox.org/install-popup-button.js"></script><a class="dbox-donation-button" style="background: #61d4d4 url(https://d1iczxrky3cnb2.cloudfront.net/red_logo.png) no-repeat 37px;color: black;text-decoration: none;font-family: Verdana,sans-serif;display: inline-block;font-size: 16px;padding: 15px 38px;padding-left: 75px;-webkit-border-radius: 4px;-moz-border-radius: 2px;border-radius: 2px;box-shadow: 0 1px 0 0 #1f5a89;text-shadow: 0 1px rgba(0, 0, 0, 0.3);" href="https://donorbox.org/locality-support-a-small-business">Donate</a>
+      </div>
+      
+      <table style="width:70vw;margin-top:7vw;text-align:left;" class="table table-dark">
         <thead>
           <tr>
             <th scope="col">Day</th>
@@ -95,8 +99,8 @@
 
           <tr>
             <th scope="row">{{days[i['day']]}}</th>
-            <td style="vertical-align:middle;text-align:center;">{{i['start'][0:2]}} : {{i['start'][2:]}}</td>
-            <td style="vertical-align:middle;text-align:center;">{{i['end'][0:2]}} : {{i['end'][2:]}}</td>
+            <td style="vertical-align:left;text-align:left;">{{i['start'][0:2]}} : {{i['start'][2:]}}</td>
+            <td style="vertical-align:left;text-align:left;">{{i['end'][0:2]}} : {{i['end'][2:]}}</td>
 
           </tr>
 
@@ -110,7 +114,6 @@
     </div>
   </div>
 </section>
-
 
   <!-- FAQ -->
   <section id="faq" class="qoo__dark qoo__faq">
