@@ -110,11 +110,13 @@ def business(id):
         identifier="sndmap",
         lat=lat,
         lng=lng,
-        style= "height:45vh;width:70vw;margin-bottom:7vh;color:black;",
+        style= "height:45vh;width:70vw;margin-top:7vh;margin-bottom:7vh;color:black;",
         markers=individualMarkers
     )
+
+    mapsLink = "https://www.google.com/maps/dir/"+lat+","+lng+"/"+str(businessJSON['coordinates']['latitude'])+","+str(businessJSON['coordinates']['longitude'])+"/"
     
 
-    return render_template('business.html', business=businessJSON, soloMap = soloMap)
+    return render_template('business.html', business=businessJSON, soloMap = soloMap, maplink = mapsLink, phone=businessJSON['phone'], times=businessJSON['hours'][0]['open'], days=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])
 if(__name__ == "__main__"):
     app.run(debug=True)

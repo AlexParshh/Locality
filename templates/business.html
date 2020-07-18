@@ -44,7 +44,7 @@
         <ul class="uk-navbar-nav uk-visible@m">
           <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
-          <li><a href="#community" data-uk-scroll="offset: 50">News</a></li>
+          <li><a href="/news">News</a></li>
           <li><a href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
         </ul>
         <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
@@ -56,7 +56,7 @@
                 <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
                   <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
                   <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
-                  <li><a class="uk-modal-close" href="#community" data-uk-toggle="target: #contact_modal">GoFundMe</a></li>
+                  <li><a href="/news">News</a></li>
                   <li><a class="uk-modal-close" href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
                 </ul>
               </div>
@@ -76,9 +76,37 @@
       <h5 class="uk-margin-small-top animation">{{business.categories[0]['title']}}</h1>
       <h1 class="uk-margin-small-top animation">{{ business.name }}</h1>
       <h2 class="uk-margin-small-top animation">{{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  </h2>
+      <h3 style="color:white" class="uk-margin-small-top animation">{{phone}}</h3>
       <a href="#support" class="uk-button uk-button-large uk-button-primary uk-margin-top animation" data-uk-scroll="offset: 50"> Let's Support Them</a>
       <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
+      <a href={{maplink}} class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> Get Personalized Directions</a>
+
+      <table style="width:70vw;margin-top:7vw;" class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Open</th>
+            <th scope="col">Close</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for i in times %}
+
+          <tr>
+            <th scope="row">{{days[i['day']]}}</th>
+            <td style="vertical-align:middle;text-align:center;">{{i['start'][0:2]}} : {{i['start'][2:]}}</td>
+            <td style="vertical-align:middle;text-align:center;">{{i['end'][0:2]}} : {{i['end'][2:]}}</td>
+
+          </tr>
+
+          {% endfor %}
+          
+        </tbody>
+      </table>
+
       {{soloMap.html}}
+
     </div>
   </div>
 </section>
