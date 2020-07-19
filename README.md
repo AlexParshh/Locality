@@ -6,7 +6,7 @@ We were inspired to build Locality after witnessing the debacle that the COVID-1
 
 ## What is Locality  
 
-Locality is a platform to promote local businesses during this COVID-19 Pandemic. As many are now relying on online and delivery companies such as Amazon and eBay, local businneses are losing customers and shutting down very rapidly. The purpose of Locality is to allow users to view and support local businesses instead of large corporations and chains. GoFundMe pages of various businesses are embedded on the site, allowing users to donate money for a good cause. Locality also features a news feed about small businesses in the users location, to help keep everyone educated about the current situations in their communities.
+Locality is a platform to promote local businesses during this COVID-19 Pandemic. As many are now relying on online and delivery companies such as Amazon and eBay, local businneses are losing customers and shutting down very rapidly. The purpose of Locality is to allow users to view and support local businesses instead of large corporations and chains. GoFundMe pages of various businesses are embedded on the site, allowing users to donate money for a good cause. Locality also features a news feed about small businesses in the user's location, to help keep everyone educated about the current situations in their communities.
 
 ## How to View/Access Locality 
 
