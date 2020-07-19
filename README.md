@@ -26,7 +26,9 @@ To host Locality, we used Heroku.
 
 ## How it works
 
-Locality makes use of the user's IP address, and via geolocation, returns the user's latitude and longitude. Then, these coordinates go through the Yelp Deep Search API and our custom filters to find relevant local businneses in the nearby area as well as relevant local small business news. The locations are sorted by their distance from the user automatically. The Google Maps API was used to add styled markers to businesses near the user's location. We also implemented the sign in with Linkedin via Linkedin Oauth feature. 
+Locality makes use of the user's IP address, and via geolocation, returns the user's latitude and longitude. Then, these coordinates go through the Yelp Deep Search API and our custom filters to find relevant local businneses in the nearby area as well as relevant local small business news. The locations are sorted by their distance from the user automatically. The Google Maps API was used to add styled markers to businesses near the user's location. We also implemented the sign in with Linkedin via Linkedin Oauth feature.
+
+The Radar.io API was used to reverse Geocode the users latitude and longitude, in order to find the provice/state they're in. This information was then used in order to filter for relevant small business news based on user location. 
 
 ## Requirements
 
