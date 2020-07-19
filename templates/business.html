@@ -43,10 +43,15 @@
       <div id="navbar-scrollspy" class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@m">
           <li><a href="/">Home</a></li>
+<<<<<<< HEAD
           <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
+=======
+>>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
           <li><a href="/news">News</a></li>
-          <li><a href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
+          <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=7837zspqlb75u3&scope=r_liteprofile%20r_emailaddress%20w_member_social&redirect_uri=http://127.0.0.1:5000/login">
+            <img src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png" style="margin-top:2vh">
+          </a>
         </ul>
         <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
           <a href="#" data-uk-toggle="target: #mobile_navbar_modal"><i class="icon" data-feather="menu"></i></a>
@@ -55,11 +60,14 @@
               <div class="uk-container-xsmall uk-margin-auto uk-padding-large">
                 <button class="qoo__dark uk-modal-close-full uk-close-large" type="button" data-uk-close></button>
                 <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
+<<<<<<< HEAD
                   <li><a href="/">Home</a></li>
+=======
+                  <li><a class="uk-modal-close" href="/">Home</a></li>
+>>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
                   <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
                   <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
-                  <li><a href="/news">News</a></li>
-                  <li><a class="uk-modal-close" href="#business" data-uk-toggle="target: #contact_modal">Add Business</a></li>
+                  <li><a class="uk-modal-close" href="/news">News</a></li>
                 </ul>
               </div>
             </div>
@@ -78,6 +86,7 @@
       <h5 class="uk-margin-small-top animation">{{business.categories[0]['title']}}</h1>
       <h1 class="uk-margin-small-top animation">{{ business.name }}</h1>
       <h2 class="uk-margin-small-top animation">{{business.location['address1']}} {{business.location['city']}}, {{business.location['state']}} {{business.location['zip_code']}}  </h2>
+<<<<<<< HEAD
       <h3 style="color:white" class="uk-margin-small-top animation">{{phone}}</h3>
       <a href={{maplink}} class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> Get Personalized Directions</a>
       
@@ -86,11 +95,19 @@
       </div>
       
       <table style="width:70vw;margin-top:7vw;text-align:left;" class="table table-dark">
+=======
+      <h3 style="color:white" class="uk-margin-small-top animation"><a href="tel:{{phone}}">Click Here To Call {{phone}}</a></h3>
+      <a href="https://www.canada.ca/en/department-finance/economic-response-plan.html" class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> COVID-19 Relief Programs</a>
+      <a href={{maplink}} class="uk-button uk-button-large uk-button-primary uk-margin-top animation"> Get Personalized Directions</a>
+      <script type="text/javascript" defer src="https://donorbox.org/install-popup-button.js"></script><a class="uk-button uk-button-large uk-button-primary uk-margin-top animation" style="background: #61d4d4 url(https://d1iczxrky3cnb2.cloudfront.net/red_logo.png) no-repeat 37px;color: black;text-decoration: none;font-family: Verdana,sans-serif;display: inline-block;padding-left: 75px;-webkit-border-radius: 4px;-moz-border-radius: 2px;border-radius: 4px;box-shadow: 0 1px 0 0 #1f5a89;" href="https://donorbox.org/locality-support-a-small-business">Donate</a>
+
+      <table style="width:100%;margin-top:4vw;" class="table table-dark">
+>>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
         <thead>
           <tr>
-            <th scope="col">Day</th>
-            <th scope="col">Open</th>
-            <th scope="col">Close</th>
+            <th scope="col"><u>Day</u></th>
+            <th scope="col"><u>Open</u></th>
+            <th scope="col"><u>Close</u></th>
           </tr>
         </thead>
         <tbody>
@@ -99,13 +116,18 @@
 
           <tr>
             <th scope="row">{{days[i['day']]}}</th>
+<<<<<<< HEAD
             <td style="vertical-align:left;text-align:left;">{{i['start'][0:2]}} : {{i['start'][2:]}}</td>
             <td style="vertical-align:left;text-align:left;">{{i['end'][0:2]}} : {{i['end'][2:]}}</td>
+=======
+            <td style="text-align:center;">{{i['start'][0:2]}} : {{i['start'][2:]}}</td>
+            <td style="text-align:center;">{{i['end'][0:2]}} : {{i['end'][2:]}}</td>
+>>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
 
           </tr>
 
           {% endfor %}
-          
+
         </tbody>
       </table>
 

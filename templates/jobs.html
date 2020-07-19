@@ -41,14 +41,8 @@
       <div id="navbar-scrollspy" class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@m">
           <li><a href="/">Home</a></li>
-<<<<<<< HEAD
-          <li><a href="#support" data-uk-scroll="offset: 50">Support</a></li>
-=======
->>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
           <li><a href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
-          <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=7837zspqlb75u3&scope=r_liteprofile%20r_emailaddress%20w_member_social&redirect_uri=http://127.0.0.1:5000/login">
-            <img src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png" style="margin-top:2vh">
-          </a>
+          <li><a href="/news">News</a></li>
         </ul>
         <div class="qoo__mobile__navbar uk-hidden@m uk-padding uk-padding-remove-vertical">
           <a href="#" data-uk-toggle="target: #mobile_navbar_modal"><i class="icon" data-feather="menu"></i></a>
@@ -57,13 +51,9 @@
               <div class="uk-container-xsmall uk-margin-auto uk-padding-large">
                 <button class="qoo__dark uk-modal-close-full uk-close-large" type="button" data-uk-close></button>
                 <ul class="qoo__mobile__navbar__item uk-margin-remove uk-text-center uk-padding-remove-left" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: li; delay: 100; repeat: true;">
-<<<<<<< HEAD
-                  <li><a href="/">Home</a></li>
-                  <li><a class="uk-modal-close" href="#support" data-uk-scroll="offset: 50">Support</a></li>
-=======
                   <li><a class="uk-modal-close" href="/">Home</a></li>
->>>>>>> 2a54e3e18eee2ec0210677363a5434311dcaba5e
                   <li><a class="uk-modal-close" href="#faq" data-uk-scroll="offset: 50">FAQ</a></li>
+                  <li><a class="uk-modal-close" href="/news">News</a></li>
                 </ul>
               </div>
             </div>
@@ -78,39 +68,31 @@
 <section class="qoo__dark qoo__hero" data-uk-parallax="bgy: -100">
   <div class="qoo__hero__content uk-container" data-uk-parallax="y: 100,0">
     <div class="qoo__hero__content__inner uk-margin-auto">
-      <h1 class="uk-margin-small-top animation">Local Small Business News</h1>
-      <h2 class="uk-margin-small-top animation">Stay educated about the current situations surrounding your local businesses.</h2>
+      <h1 class="uk-margin-small-top animation">Relevant Jobs</h1>
+      <h2 class="uk-margin-small-top animation">Hey there, {{linkedin.localizedFirstName}} {{linkedin.localizedLastName}}!<br>Locality is using LinkedIn to help display relevant jobs to you.</h2>
     </div>
   </div>
 </section>
 
-
-
 <section id="support" class="qoo__dark qoo__services">
-
       <div
         class="uk-grid-match uk-child-width-1-4@m uk-child-width-1-2@s"
         data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .qoo__services__item; delay: 100;"
         data-uk-grid>
 
-        {% for i in range(news|length) %}
+        {% for i in range(jobs|length) %}
         <div v-for="biz in filteredBiz" class="qoo__services__item">
           <div class="qoo__services__item__inner uk-background-secondary">
 
-            <a href={{news[i]['url']}}>
-                <img src={{news[i]['urlToImage']}} alt="Girl in a jacket" width="100%" height="150">
+            <a href={{jobs[i]['Link']}}>
+              <span class="business_type">{{jobs[i]['Location']}}</span>
+              <h4 class="uk-margin-small-top uk-margin-auto-bottom">
+                {{jobs[i]['Name']}} @ {{jobs[i]['Employer']}}
+              </h4>
+              <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
+                {{jobs[i]['Description']}}
+              </p>
             </a>
-
-            <span class="business_type">{{news[i]['source']['name']}}</span>
-            <h4 class="uk-margin-small-top uk-margin-auto-bottom">
-              {{news[i]['title']}}
-            </h4>
-            <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
-              {{news[i]['description']}}
-            </p>
-            <p v-if="biz.supportType" class="uk-margin-small-top uk-margin-remove-bottom">
-             Published: {{news[i]['publishedAt']}}
-            </p>
           </div>
         </div>
         {% endfor %}
