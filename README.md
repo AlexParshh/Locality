@@ -28,9 +28,9 @@ To host Locality, we used Heroku and Domain.com for our custom domain, provided 
 
 ## How It Works
 
-Locality makes use of the user's IP address, and via geolocation and the IP Geolocation API, returns the user's latitude and longitude. Then, these coordinates go through the Yelp Deep Search API and our custom filters to find relevant local businneses in the nearby area as well as relevant local small business news. The locations are sorted by their distance from the user automatically. The Google Maps API was used to add styled markers to businesses near the user's location. We also implemented the sign in with Linkedin via Linkedin Oauth feature which would be used to display relevant jobs based on the user.
+Locality makes use of the user's IP address and through the IP Geolocation API, returns the user's latitude and longitude. Then, these coordinates go through the Yelp Deep Search API and our custom filters to find relevant local businesses in the nearby area as well as relevant local small business news. The locations are sorted by their distance from the user automatically. The Google Maps API was used to add styled markers to businesses near the user's location. We also implemented the sign in with Linkedin via Linkedin Oauth feature which would be used to display relevant jobs based on the user.
 
-The Radar.io API was used to reverse Geocode the user's latitude and longitude, in order to find the provice/state they're in. This information was then used in order to filter for relevant small business news based on user location on our /news page.
+The Radar.io API was used to reverse geocode the user's latitude and longitude, in order to find the province/state they're in. This information was then used in order to filter for relevant small business news based on user location on our /news page.
 
 ## Requirements
 
@@ -70,7 +70,6 @@ This will execute our website and will open a local version for you to view on l
 ## What's Next?
 
 - We were planning on adding personalized job recommendations for users who logged in via Linkedin, however, this was not possible since we needed to email and request for access to this API feature, which could take up to 2 weeks. Instead, we added static jobs to prove the concept. We want to add this feature in the nearby future.
-
 - We also want to add a way to encourage consumer spending at particular locations, one way this could have been done was by using the Privacy.com API to help users generate gift cards for the favourite businesses. This was not possible through the sandbox API which we initially thought would be possible during brainstorm.
 
 ## What We Learned
@@ -78,7 +77,7 @@ This will execute our website and will open a local version for you to view on l
 - How to utilize the Flask framework to efficiently build a web platform, which includes the Jinja web template engine.
 - How to implement the Linkedin Oauth Signin onto a webpage with the use of cookies to store login data.
 - How to integrate a domain from domain.com into Heroku using DNS Records and CNAME.
-- Hot to properlly use the git terminal.
+- How to properlly use the GIT commands in terminal to push and pull, along with GitHub's collaborative features.
 - How to properlly utilize several API's such as the ones listed in the "Built With" section.
 
 ## Authors 
